@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="static/index.css"> 
+    <meta charset="UTF-8">
+    <title>Anime Pal</title>
+</head>
+<body>
+       <section>
+        <div class="form-box">
+            <form action="/predict" method="POST">
+                
+                <div class="inputbox">
+                    <label for="">Title:</label>
+                    <input type="text" id="title" name="title"><br><br>
+                </div>
+                <div class="inputbox">
+                    <label for="">Genre(s):</label>
+                    <input type="text" id="genre" name="genre"><br><br>
+                </div>
+                <div class="inputbox">
+                    <label for="">Description:</label>
+                    <input type="text" id="description" name="description"><br><br> 
+                    <!--<textarea id="description" name="description"></textarea><br><br>-->
+                </div>
+                <div class="inputbox">
+                    <label for="">Type:</label>
+                    <!--<input type="text" id="type" name="type"><br><br>-->
+                    <select id="type" name="type">
+                        <option value="TV">TV</option>
+                        <option value="Movie">Movie</option>
+                    </select><br><br>
+                </div>
+                <div class="inputbox">
+                    <label for="">Producer(s):</label>
+                    <input type="text" id="producer" name="producer"><br><br>
+                </div>
+                <div class="inputbox">
+                    <label for="">Studio(s):</label>
+                    <input type="text" id="studio" name="studio"><br><br>
+                </div>
+                <div class="button">
+                    <input type="submit" value="Predict">
+                </div>
+            </form>
+            
+        </div>
+        <div class="result">
+            {% if prediction %}
+            <h2>{{ prediction }}</h2>
+            {% endif %}
+        </div>
+    </section>
+</body>
+</html>
